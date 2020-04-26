@@ -49,9 +49,9 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="book.html">Books</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="book.php">Books</a></li>
                         <li class="menu-has-children"><a href="">News</a>
                             <ul>
                                 <li><a href="elements.html">Elements</a></li>

@@ -1,3 +1,9 @@
+<?php
+include("server.php");
+
+include("fheader.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +38,9 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-33">
-						Register an account
+						Register a student account
                     </span>
                     
                     <div class= "validate-input" data-validate = "Firstname is required">
@@ -50,7 +56,7 @@
 						
                     </div>
                     <div class= "validate-input" data-validate = "Enrollment number is required">
-						<input class="form-control" type="text" name="enrollmentno" placeholder="School ID">
+						<input class="form-control" type="text" name="nic" placeholder="School ID">
 						
                     </div>
                     
@@ -64,12 +70,15 @@
 						<input class="form-control" type="password" name="pass" placeholder="Password">
 					
                     </div>
+                    <div class="rs1 validate-input" data-validate="Password is required">
+						<input class="form-control" type="password" name="copass" placeholder="Retype Password">
+					
+                    </div>
                    
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
-							Register
-						</button>
+						<input class="login100-form-btn" type="submit" name="submit" value="Register">
+	
 					</div>
 
 					

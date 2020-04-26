@@ -1,3 +1,6 @@
+<?php 
+ include("server.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,49 +34,61 @@
 	
 	<div class="limiter" >
 		<div class="container-login100">
-			<div id="particles-js"></div>
+			
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50" >
-				<form class="login100-form validate-form" >
+				<form class="login100-form validate-form" method="POST" action="signup.php" >
 					<span class="login100-form-title p-b-33">
 						Register a Librarian account
                     </span>
                     
                     <div class= "validate-input" data-validate = "Firstname is required">
-						<input class="form-control" type="text" name="firstname" placeholder="FirstName">
+						<input class="form-control" type="text" name="firstname" placeholder="FirstName" >
 						
                     </div>
                     <div class= "validate-input" data-validate = "Lastname is required">
-						<input class="form-control" type="text" name="lastname" placeholder="LastName">
+						<input class="form-control" type="text" name="lastname" placeholder="LastName" >
 						
                     </div>
                     <div class= "validate-input" data-validate = "Username is required">
-						<input class="form-control" type="text" name="username" placeholder="UserName">
+						<input class="form-control" type="text" name="username" placeholder="UserName" >
 						
                     </div>
                     <div class= "validate-input" data-validate = "NIC is required">
-						<input class="form-control" type="text" name="nic" placeholder="NIC number">
+						<input class="form-control" type="text" name="nic" placeholder="NIC number" >
 						
                     </div>
                     
 
 					<div class= "validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="form-control" type="text" name="email" placeholder="Email">
+						<input class="form-control" type="text" name="email" placeholder="Email" >
 						
 					</div>
 
 					<div class="rs1 validate-input" data-validate="Password is required">
-						<input class="form-control" type="password" name="pass" placeholder="Password">
+						<input class="form-control" type="password" name="pass" placeholder="Password" >
+					
+					</div>
+					<div class="rs1 validate-input" data-validate="Confirm Password is required">
+						<input class="form-control" type="password" name="copass" placeholder="Confirm Password">
 					
                     </div>
                    
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn" type="submit">
-							Register
-						</button>
+						<input class="login100-form-btn" type="submit" name="submit" value="Register">
+							
+						
 					</div>
 
-					
+					<div class="text-center">
+						<span class="txt1">
+							Already user?
+						</span>
+
+						<a href="signin.php" class="txt2 hov1">
+							Sign in
+						</a>
+					</div>
 				</form>
 			</div>
 		</div>

@@ -2975,8 +2975,8 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background-image: url("/img/header-bg.png");
-  background-size: 99%;
+  background-image: url("/img/header-bg.png") ;
+  background-size: cover;
   background-position: right;
 }
 
@@ -3253,5 +3253,12 @@ input.form-control{
     visibility: visible;
     opacity: 1;
   }
+}
+@media(min-width:798px){
+  .container-login100{
+    background-image: url("/img/banner-bg.png") no-repeat cover;
+
+  }
+ 
 }
 
