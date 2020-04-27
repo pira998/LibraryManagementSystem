@@ -20,8 +20,6 @@ disapproving student
 for these impelement parts are completed.
 
 
-this is our front end website
-![](https://octodex.github.com/images/Capture.png)
 
 
 Steps
