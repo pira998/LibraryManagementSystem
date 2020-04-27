@@ -55,7 +55,7 @@ if($librarian){
 if( count($errors)==0){
 
 $password = $password_1;
-$query = "INSERT INTO student_info (firstname,lastname,username,email,nic,password) VALUES('$firstname','$lastname','$username','$email','$nic','$password') ";
+$query = "INSERT INTO student_info (firstname,lastname,username,email,nic,password,status) VALUES('$firstname','$lastname','$username','$email','$nic','$password','No') ";
 
 mysqli_query($db,$query);
 $_SESSION['username' ]== $username;
@@ -73,7 +73,7 @@ $_SESSION['success'] == "You are now logged in";header('location: student/index.
 
     if(isset($_POST ["submit1"])){
         $count = 0;
-        $res = mysqli_query($db,"select * from student_info where username='$_POST[username]' && password = '$_POST[pass]'");
+        $res = mysqli_query($db,"select * from student_info where username='$_POST[username]' && password = '$_POST[pass]' && status='Yes'");
         $count = mysqli_num_rows($res);
         if($count==0){
 ?>
