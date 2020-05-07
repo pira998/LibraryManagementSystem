@@ -1,3 +1,7 @@
+
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/nprogress.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
+   
 </head>
 
 <body class="nav-md">
@@ -35,7 +40,7 @@
                     <div class="profile_info">
                         <span>Welcome,</span>
 
-                        <h2>John Doe</h2>
+                        <h2><?php echo $_SESSION["librarian"];  ?></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -48,9 +53,11 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="index.php"><i class="fa fa-home"></i> Student Details <span class="fa fa-chevron-down"></span></a></li>
+                            <li><a href="display_student_info.php"><i class="fa fa-home"></i> Student Details <span class="fa fa-chevron-down"></span></a></li>
                             <li><a href="add_book.php"><i class="fa fa-edit"></i> Add Books <span class="fa fa-chevron-down"></span></a></li>
                             <li><a href="display_books.php"><i class="fa fa-edit"></i> Search Books<span class="fa fa-chevron-down"></span></a></li>
+                            <li><a href="issueBook.php"><i class="fa fa-edit"></i> Issue Books<span class="fa fa-chevron-down"></span></a></li>
+                            <li><a href="return_book.php"><i class="fa fa-edit"></i> Return Books<span class="fa fa-chevron-down"></span></a></li>
                             <li><a><i class="fa fa-desktop"></i> UI Elements <span
                                             class="fa fa-chevron-down"></span></a>
 
@@ -88,7 +95,7 @@
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="../signin.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
 
@@ -104,4 +111,3 @@
                 </nav>
             </div>
         </div>
-        <!-- /top navigation -->

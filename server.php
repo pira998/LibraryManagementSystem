@@ -13,7 +13,7 @@ $nic = "";
 $errors = array();
 
 
-$db = mysqli_connect('localhost','root','','librarymanagementsystem') or die("could not connect to database");
+$db = mysqli_connect('localhost','root','','l') or die("could not connect to database");
 
 // Register Librarians
 if(isset($_POST['submit'])){
@@ -84,7 +84,7 @@ $_SESSION['success'] == "You are now logged in";header('location: student/index.
     }
     else
     { 
-        $_SESSION["librarian"] =$_POST["username"];
+        $_SESSION["student"] =$_POST["username"];
 ?>
 <script type="text/javascript">
     window.location="student/index.php"

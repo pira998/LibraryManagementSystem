@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 //intializing variables
 
 $firstname = "";
@@ -13,7 +11,7 @@ $nic = "";
 $errors = array();
 
 
-$db = mysqli_connect('localhost','root','','librarymanagementsystem') or die("could not connect to database");
+$db = mysqli_connect('localhost','root','','l') or die("could not connect to database");
 
 // Register Librarians
 if(isset($_POST['submit'])){
@@ -77,9 +75,13 @@ if(isset($_POST ["submit1"])){
     $count = mysqli_num_rows($res);
     if($count==0){
         ?>
+        <script type="text/javascript">
+            window.location="sign_in.php"
+        </script>
         <div class="alert alert-danger col-lg-6 col-lg-push-3">
             <strong style="color:white">Invalid</strong> Username Or Password.
         </div>
+
         <?php
     }
     else
