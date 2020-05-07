@@ -20,20 +20,18 @@ disapproving student
 for these impelement parts are completed.
 
 
-this is our front end website
-![](img/Capture.jpg)
 
 
 Steps
 
-1.First download that zip file and extract it.
-2.Then open the folder in VSCode.
-3.In the folder, there is a folder name database that has the database of our project named database.sql
-4.start the xampp server and run apache and MySQL
-5.open the phpmyadmin
-6.create a database name as librarymangementsystem
-7.then import that database.sql file
-8.then serve the project
+1. First download that zip file and extract it.
+2. Then open the folder in VSCode.
+3. In the folder, there is a folder name database that has the database of our project named database.sql
+4. start the xampp server and run apache and MySQL
+5. open the phpmyadmin
+6. create a database name as librarymangementsystem
+7. then import that database.sql file
+8. then serve the project
 
 
 
