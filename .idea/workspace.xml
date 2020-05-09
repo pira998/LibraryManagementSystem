@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a70d2b2e-741d-4ae2-8d17-be1a88a8e72e" name="Default Changelist" comment="" />
+    <list default="true" id="a70d2b2e-741d-4ae2-8d17-be1a88a8e72e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +35,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP (1)" />
   <component name="ProjectId" id="1b4F9JjC9NcIk8qxJmGZC3smXij" />
   <component name="ProjectViewState">
@@ -43,6 +48,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Uni_Assistance" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
@@ -64,13 +70,37 @@
       <updated>1587883305811</updated>
       <workItem from="1587883312392" duration="27474000" />
       <workItem from="1587922457422" duration="1091000" />
+      <workItem from="1588998862266" duration="821000" />
     </task>
+    <task id="LOCAL-00001" summary="change username password for my server">
+      <created>1588999149302</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588999149302</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change username password for my server">
+      <created>1588999306827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588999306827</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change username password for my server" />
+    <option name="LAST_COMMIT_MESSAGE" value="change username password for my server" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Notifications" timestamp="1588999671083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1588999671083" />
     <state x="476" y="3" key="#PHP" timestamp="1587883367767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -83,6 +113,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587891222342" />
+    <state x="385" y="7" key="CommitChangelistDialog2" timestamp="1588999304977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="385" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588999304977" />
+    <state x="135" y="75" key="DiffContextDialog" timestamp="1588999349293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="135" y="75" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588999349293" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587914583538">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -99,6 +137,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587915109229" />
+    <state x="349" y="155" key="Vcs.Push.Dialog.v2" timestamp="1588999350868">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="155" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588999350868" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587922457417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

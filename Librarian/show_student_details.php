@@ -22,8 +22,10 @@ $id=$firstname=$lastname=$username=$email=$nic=$status='';
         <th>Email</th>
         <th>NIC</th>
         <th>Status</th>
+        <th>Edit</th>
         <th>Approve</th>
         <th>Not Approve</th>
+        <th>Delete</th>
     </tr>
     <tr>
     <?php while ($m=mysqli_fetch_array($array)):?>
@@ -37,8 +39,10 @@ $id=$firstname=$lastname=$username=$email=$nic=$status='';
         <td><?php echo $m['email'] ?></td>
         <td id="nic"><?php echo $m['nic'] ?></td>
         <td><?php echo $m['status'] ?></td>
+        <td><a href="Edit_Student.php?id=<?php echo $m['id']?>">Edit</a></td>
         <td><a href="approve.php?id=<?php echo $m['id']; ?>">Approve</a></td>
         <td><a href="notApprove.php?id=<?php echo $m['id']; ?>">NotApprove</a></td>
+        <td><a href="Delete_Student.php?id=<?php echo $m['id']; ?>">Delete</a></td>
     </tr>
     <?php endwhile; ?>
 
