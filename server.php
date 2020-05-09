@@ -13,7 +13,7 @@ $nic = "";
 $errors = array();
 
 
-$db = mysqli_connect('localhost','root','','l') or die("could not connect to database");
+$db = mysqli_connect('localhost','root','Shanmu@25621','database') or die("could not connect to database");
 
 // Register Librarians
 if(isset($_POST['submit'])){
