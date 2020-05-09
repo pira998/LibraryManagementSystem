@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,7 +36,7 @@
                     <div class="profile_info">
                         <span>Welcome,</span>
 
-                        <h2>John Doe</h2>
+                        <h2><?php echo $_SESSION['student']; ?></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -87,7 +88,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt=""><?php echo $_SESSION['student']; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
