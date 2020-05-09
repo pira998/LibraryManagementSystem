@@ -14,6 +14,7 @@ $errors = array();
 
 $db = mysqli_connect('localhost','root','','') or die("could not connect to database");
 
+
 // Register Librarians
 if(isset($_POST['submit'])){
 
