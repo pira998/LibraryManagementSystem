@@ -90,7 +90,8 @@ include ("connection.php");
                                 </tr>
                                 <tr>
                                     Book Image
-                                    <td> <input type="file"  id="bb" name="bb" required="" value="<?php echo $bookImg?>"></td>
+                                    <td><img height="100" width="100" src="<?php echo $bookImg?>">
+                                    <input type="file"  id="bb" name="bb" ></td>
                                 </tr>
                                 <tr>
                                     <td> <input type="text" class="form-control" placeholder="Publisher" required="" name="publisher" value="<?php echo $publisher?>"></td>
@@ -139,35 +140,41 @@ include ("connection.php");
 
 <?php
 if (isset($_POST["submit1"])){
-    $tm=md5(time());
-    $fnm=$_FILES['bb']['name'];
-    $dst="./book_images/".$tm.$fnm;
-    $dst1="book_images/".$tm.$fnm;
-    move_uploaded_file($_FILES["bb"]["tmp_name"],$dst);
+    if ($_FILES['bb']['size'] == 0) {
+
+    }else{
+        $tm=md5(time());
+        $fnm=$_FILES['bb']['name'];
+        $dst="./book_images/".$tm.$fnm;
+        $dst1="book_images/".$tm.$fnm;
+        move_uploaded_file($_FILES["bb"]["tmp_name"],$dst);
+        $sql2="UPDATE `books_details` SET `bookImg`='".$dst1."' WHERE `id`='".$id."';";
+        mysqli_query($connection,$sql2);
+    }
 
 
 
 
-    $sql="UPDATE `books_details` SET (
-`ISBN`='$_POST[ISBN]',
-`title`='$_POST[title]',
-`subject`='$_POST[subject]',
-`bookImg`='$dst1' ,
-`publisher`='$_POST[publisher]',
-`language`='$_POST[language]',
-`price`='$_POST[price]',
-`authorname`='$_POST[authorname]',
-`numOfPages`='$_POST[numOfPages]',
-`purchaseDate`='$_POST[purchaseDate]',
-`publicationDate`='$_POST[publicationDate]',
-`bookQty`='$_POST[bookQty]',
-`availableQty`='$_POST[availableQty]',
-`librarianUsername`='$_SESSION[librarian]') 
-WHERE (`id`='$id');";
+
+    $sql="UPDATE `books_details` SET 
+`ISBN`='".$_POST['ISBN']."',
+`title`='".$_POST['title']."',
+`subject`='".$_POST['subject']."',
+`publisher`='".$_POST['publisher']."',
+`language`='".$_POST['language']."',
+`price`='".$_POST['price']."',
+`authorname`='".$_POST['authorname']."',
+`numOfPages`='".$_POST['numOfPages']."',
+`purchaseDate`='".$_POST['purchaseDate']."',
+`publicationDate`='".$_POST['publicationDate']."',
+`bookQty`='".$_POST['bookQty']."',
+`availableQty`='".$_POST['availableQty']."',
+`librarianUsername`='".$_SESSION['librarian']."'
+WHERE `id`='".$id."';";
     mysqli_query($connection,$sql);?>
     <script type="text/javascript">
         alert("Edited Succesfully");
-        Window.location("display_books.php")
+        window.location="display_books.php";
     </script>
 
     <?php
