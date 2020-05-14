@@ -1,6 +1,7 @@
 <?php
 $id=$_GET["id"];
-include ("connection.php");
+include '../utility/connection.php';
+
 ?>
 
 
@@ -56,8 +57,8 @@ $m=mysqli_fetch_array($array);
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -76,56 +77,65 @@ $m=mysqli_fetch_array($array);
                         <form method="post" action="">
                             <table class="table table-bordered">
                                 <tr>
-                                    <td >
-                                        <label >Register_Number</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['regis_num']?>" name="regis_num">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >First_Name</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['firstname']?>" name="firstname">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >Last_Name</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['lastname']?>" name="lastname">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >Username</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['username']?>" name="username">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >Grade</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['grade']?>" name="grade">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >Address</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['Address']?>" name="Address">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >Email</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['email']?>" name="email">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <label >NIC</label>
-                                        <input class="form-control" type="text" value="<?php echo $m['nic']?>" name="nic">
+                                    <td>
+                                        <label>Register_Number</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['regis_num']?>"
+                                            name="regis_num">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input class="form-control btn btn-primary" name="submit1" type="submit" value="Edit">
+                                        <label>First_Name</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['firstname']?>"
+                                            name="firstname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Last_Name</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['lastname']?>"
+                                            name="lastname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Username</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['username']?>"
+                                            name="username">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Grade</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['grade']?>"
+                                            name="grade">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Address</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['Address']?>"
+                                            name="Address">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Email</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['email']?>"
+                                            name="email">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>NIC</label>
+                                        <input class="form-control" type="text" value="<?php echo $m['nic']?>"
+                                            name="nic">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control btn btn-primary" name="submit1" type="submit"
+                                            value="Edit">
                                     </td>
                                 </tr>
 
@@ -164,7 +174,3 @@ if (isset($_POST['submit1'])){
 <?php
 include("footer.php");
 ?>
-
-
-
-

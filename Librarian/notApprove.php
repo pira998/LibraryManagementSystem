@@ -1,4 +1,8 @@
-<?php include ("connection.php");
+<?php
+
+include '../utility/connection.php';
+
+
 ?>
 
 <?php
@@ -11,5 +15,5 @@ mysqli_query($connection,$sql);
 
 ?>
 <script type="text/javascript">
-    window.location=("index.php")
+window.location = ("index.php")
 </script>

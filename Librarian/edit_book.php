@@ -16,7 +16,11 @@ if(isset($_GET['logout'])){
 
 
 ?>
-<?php include ("connection.php");
+<?php 
+
+include '../utility/connection.php';
+
+
 ?>
 
 <?php
@@ -60,8 +64,8 @@ include ("connection.php");
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -80,45 +84,60 @@ include ("connection.php");
                         <form action="" method="post" class="col-lg-9" enctype="multipart/form-data">
                             <table class="table table-bordered">
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="ISBN" name="ISBN" required="" value="<?php echo $ISBN?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="ISBN" name="ISBN"
+                                            required="" value="<?php echo $ISBN?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Title" name="title" required="" value="<?php echo $title?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Title" name="title"
+                                            required="" value="<?php echo $title?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Subject" name="subject" required="" value="<?php echo $subject?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Subject" name="subject"
+                                            required="" value="<?php echo $subject?>"></td>
                                 </tr>
                                 <tr>
                                     Book Image
-                                    <td> <input type="file"  id="bb" name="bb" required="" value="<?php echo $bookImg?>"></td>
+                                    <td> <input type="file" id="bb" name="bb" required="" value="<?php echo $bookImg?>">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Publisher" required="" name="publisher" value="<?php echo $publisher?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Publisher" required=""
+                                            name="publisher" value="<?php echo $publisher?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Language" required="" name="language" value="<?php echo $language?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Language" required=""
+                                            name="language" value="<?php echo $language?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Price" required="" name="price" value="<?php echo $price?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Price" required=""
+                                            name="price" value="<?php echo $price?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Author name" required="" name="authorname" value="<?php echo $authorname?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Author name" required=""
+                                            name="authorname" value="<?php echo $authorname?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="No of Pages" required="" name="numOfPages" value="<?php echo $numOfPages?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="No of Pages" required=""
+                                            name="numOfPages" value="<?php echo $numOfPages?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Purchase date" required="" name="purchaseDate" value="<?php echo $purchaseDate?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Purchase date" required=""
+                                            name="purchaseDate" value="<?php echo $purchaseDate?>"></td>
                                 </tr>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Publication Date" required="" name="publicationDate" value="<?php echo $publicationDate?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Publication Date"
+                                            required="" name="publicationDate" value="<?php echo $publicationDate?>">
+                                    </td>
                                 </tr>
-                                    <td> <input type="text" class="form-control" placeholder="Book qty" required="" name="bookQty" value="<?php echo $bookQty?>"></td>
+                                <td> <input type="text" class="form-control" placeholder="Book qty" required=""
+                                        name="bookQty" value="<?php echo $bookQty?>"></td>
                                 <tr>
-                                    <td> <input type="text" class="form-control" placeholder="Available Qty" required="" name="availableQty" value="<?php echo $availableQty?>"></td>
+                                    <td> <input type="text" class="form-control" placeholder="Available Qty" required=""
+                                            name="availableQty" value="<?php echo $availableQty?>"></td>
                                 </tr>
                                 <tr>
-                                <td> <input type="submit" name="submit1" class="btn btn-default submit" value="Update Book" style="background-color: #007bff; color: white"></td>
+                                    <td> <input type="submit" name="submit1" class="btn btn-default submit"
+                                            value="Update Book" style="background-color: #007bff; color: white"></td>
                                 </tr>
 
 
@@ -165,12 +184,12 @@ if (isset($_POST["submit1"])){
 `librarianUsername`='$_SESSION[librarian]') 
 WHERE (`id`='$id');";
     mysqli_query($connection,$sql);?>
-    <script type="text/javascript">
-        alert("Edited Succesfully");
-        Window.location("display_books.php")
-    </script>
+<script type="text/javascript">
+alert("Edited Succesfully");
+Window.location("display_books.php")
+</script>
 
-    <?php
+<?php
 
 }
 ?>

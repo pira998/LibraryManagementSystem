@@ -1,5 +1,3 @@
-
-
 <?php
 
 
@@ -32,7 +30,8 @@ if(isset($_GET['logout'])){
 <!--</html>-->
 <?php
 include("header.php");
-include ("connection.php");
+include '../utility/connection.php';
+
 ?>
 
 <!-- page content area main -->
@@ -47,8 +46,8 @@ include ("connection.php");
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -84,7 +83,8 @@ include ("connection.php");
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="form-control btn btn-dark" type="submit" name="submit1" value="Search">
+                                        <input class="form-control btn btn-dark" type="submit" name="submit1"
+                                            value="Search">
                                     </td>
                                 </tr>
                             </table>
@@ -136,8 +136,8 @@ include ("connection.php");
                                             echo $mm["librarian"];
                                         echo "</td>";
                                         echo "<td>" ;?>
-                                            <a href="return_book_fun.php?id=<?php echo $mm["id"];?>">Return</a>
-                                        <?php echo "</td>";
+                            <a href="return_book_fun.php?id=<?php echo $mm["id"];?>">Return</a>
+                            <?php echo "</td>";
                                     echo "</tr>";
                                 }
                             }
@@ -155,8 +155,3 @@ include ("connection.php");
 <?php
 include("footer.php");
 ?>
-
-
-
-
-

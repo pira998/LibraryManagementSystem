@@ -1,5 +1,3 @@
-
-
 <?php
 
 
@@ -32,7 +30,8 @@ if(isset($_GET['logout'])){
 <!--</html>-->
 <?php
 include("header.php");
-include ("connection.php");
+include '../utility/connection.php';
+
 ?>
 
 <!-- page content area main -->
@@ -48,8 +47,8 @@ include ("connection.php");
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -85,12 +84,13 @@ include ("connection.php");
 
                                     </td>
                                     <td>
-                                       <input type="submit" value="Search" name="submit1" class="form-control btn btn-default" style="margin-top: 5px;">
+                                        <input type="submit" value="Search" name="submit1"
+                                            class="form-control btn btn-default" style="margin-top: 5px;">
                                     </td>
                                 </tr>
                             </table>
                         </form>
-                            <?php
+                        <?php
                             if (isset($_POST['submit1'])) {
                                 $sql = "SELECT * FROM `student_info` WHERE `regis_num`='$_POST[regis_num]';";
                                 $array2 = mysqli_query($connection, $sql);
@@ -109,27 +109,27 @@ include ("connection.php");
                                 <tr>
 
                                     <td><label>Register_Number</label><input class="form-control" name="s_regis_num"
-                                               value="<?php echo $s_regis_num; ?>" ></td>
+                                            value="<?php echo $s_regis_num; ?>"></td>
                                 </tr>
                                 <tr>
 
-                                    <td><label>Name</label><input class="form-control" name="s_name" value="<?php echo $s_name; ?>"
-                                               ></td>
+                                    <td><label>Name</label><input class="form-control" name="s_name"
+                                            value="<?php echo $s_name; ?>"></td>
                                 </tr>
                                 <tr>
 
-                                    <td><label>Grade</label><input class="form-control" name="s_grade" value="<?php echo $s_grade; ?>"
-                                               ></td>
+                                    <td><label>Grade</label><input class="form-control" name="s_grade"
+                                            value="<?php echo $s_grade; ?>"></td>
                                 </tr>
                                 <tr>
 
-                                    <td><label>Address</label><input class="form-control" name="s_address" value="<?php echo $s_address; ?>"
-                                               ></td>
+                                    <td><label>Address</label><input class="form-control" name="s_address"
+                                            value="<?php echo $s_address; ?>"></td>
                                 </tr>
                                 <tr>
 
-                                    <td><label>Email</label><input class="form-control" name="s_email" value="<?php echo $s_email; ?>"
-                                               ></td>
+                                    <td><label>Email</label><input class="form-control" name="s_email"
+                                            value="<?php echo $s_email; ?>"></td>
                                 </tr>
                                 <tr>
                                     <td><select class="form-control" name="title">
@@ -146,34 +146,38 @@ include ("connection.php");
                                         </select>
                                     </td>
                                 </tr>
-                                <tr><td>
+                                <tr>
+                                    <td>
                                         <label>Issue Date</label>
                                         <?php
                                         $a=date("d-m-Y");
                                         ?>
-                                        <input class="form-control" type="text" name="issue_date" placeholder="dd-mm-yyyy" value="<?php echo $a; ?>">
-                                    </td></tr>
+                                        <input class="form-control" type="text" name="issue_date"
+                                            placeholder="dd-mm-yyyy" value="<?php echo $a; ?>">
+                                    </td>
+                                </tr>
                                 <tr>
-                                    <td><input class="form-control" name="s_username" value="<?php echo $s_username; ?>"
-                                               ></td>
+                                    <td><input class="form-control" name="s_username"
+                                            value="<?php echo $s_username; ?>"></td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" name="submit_2" class="form-control btn btn-primary" style="margin-top: 5px;">
+                                        <input type="submit" name="submit_2" class="form-control btn btn-primary"
+                                            style="margin-top: 5px;">
                                     </td>
                                 </tr>
                             </table>
                         </form>
-                            <?php }
+                        <?php }
                             ?>
                         <?php
                         if (isset($_POST['submit_2'])){
                             $sql2="INSERT INTO `issue` VALUES ('','$_POST[s_regis_num]','$_POST[s_name]','$_POST[s_grade]','$_POST[s_address]','$_POST[s_email]','$_POST[title]','$_POST[issue_date]','','$_POST[s_username]','$_SESSION[librarian]');";
                             mysqli_query($connection,$sql2); ?>
-                            <script type="text/javascript">
-                                alert("Issued Succefully");
-                                Window.location("issueBook.php")
-                            </script>
+                        <script type="text/javascript">
+                        alert("Issued Succefully");
+                        Window.location("issueBook.php")
+                        </script>
                         <?php }
 
                         ?>
@@ -200,7 +204,3 @@ include ("connection.php");
 <?php
 include("footer.php");
 ?>
-
-
-
-

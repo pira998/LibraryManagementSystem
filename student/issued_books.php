@@ -1,4 +1,3 @@
-
 <?php
 
 if(isset($_SESSION['username'])){
@@ -18,7 +17,7 @@ if(isset($_GET['logout'])){
 
 <?php
 include("header.php");
-include ("connection.php");
+include '../utility/connection.php';
 
 ?>
 
@@ -34,8 +33,8 @@ include ("connection.php");
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>

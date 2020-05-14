@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../utility/connection.php';
 
 //intializing variables
 
@@ -12,7 +13,7 @@ $nic = "";
 $errors = array();
 
 
-$db = mysqli_connect('localhost','root','Shanmu@25621','database') or die("could not connect to database");
+
 
 
 // Register Librarians
@@ -21,13 +22,13 @@ if(isset($_POST['submit'])){
 
 
 
-    $firstname = mysqli_real_escape_string($db,$_POST['firstname']);
-    $lastname = mysqli_real_escape_string($db,$_POST['lastname']);
-    $username =mysqli_real_escape_string($db,$_POST['username']);
-    $email=mysqli_real_escape_string($db,$_POST['email']);
-    $nic=mysqli_real_escape_string($db,$_POST['nic']);
-    $password_1 = mysqli_real_escape_string($db,$_POST['pass']);
-    $password_2 = mysqli_real_escape_string($db,$_POST['copass']);
+    $firstname = mysqli_real_escape_string($connection,$_POST['firstname']);
+    $lastname = mysqli_real_escape_string($connection,$_POST['lastname']);
+    $username =mysqli_real_escape_string($connection,$_POST['username']);
+    $email=mysqli_real_escape_string($connection,$_POST['email']);
+    $nic=mysqli_real_escape_string($connection,$_POST['nic']);
+    $password_1 = mysqli_real_escape_string($connection,$_POST['pass']);
+    $password_2 = mysqli_real_escape_string($connection,$_POST['copass']);
 
 //form validation
 
@@ -41,7 +42,7 @@ if(isset($_POST['submit'])){
 
     $user_check_query = "SELECT * FROM librarian WHERE username = '$username' or email = '$email' LIMIT 1";
 
-    $result = mysqli_query($db,$user_check_query);
+    $result = mysqli_query($connection,$user_check_query);
     $librarian = mysqli_fetch_assoc($result);
 
     if($librarian){
@@ -57,7 +58,7 @@ if(isset($_POST['submit'])){
         $password = $password_1;
         $query = "INSERT INTO librarian (firstname,lastname,username,email,nic,password) VALUES('$firstname','$lastname','$username','$email','$nic','$password') ";
 
-        mysqli_query($db,$query);
+        mysqli_query($connection,$query);
         $_SESSION['username' ]== $username;
         $_SESSION['success'] == "You are now logged in";header('location: index.php');
 
@@ -73,34 +74,32 @@ if(isset($_POST['submit'])){
 
 if(isset($_POST ["submit1"])){
     $count = 0;
-    $res = mysqli_query($db,"select * from librarian where username='$_POST[username]' && password = '$_POST[pass]'");
+    $res = mysqli_query($connection,"select * from librarian where username='$_POST[username]' && password = '$_POST[pass]'");
     $count = mysqli_num_rows($res);
     if($count==0){
         ?>
-        <script type="text/javascript">
-            window.location="sign_in.php"
-        </script>
-        <div class="alert alert-danger col-lg-6 col-lg-push-3">
-            <strong style="color:white">Invalid</strong> Username Or Password.
-        </div>
+<script type="text/javascript">
+window.location = "sign_in.php"
+</script>
+<div class="alert alert-danger col-lg-6 col-lg-push-3">
+    <strong style="color:white">Invalid</strong> Username Or Password.
+</div>
 
-        <?php
+<?php
     }
     else
     {
         $_SESSION["librarian"] =$_POST["username"];
         ?>
-        <script type="text/javascript">
-            window.location="index.php"
-        </script>
+<script type="text/javascript">
+window.location = "index.php"
+</script>
 
 
-        <?php
+<?php
 
     }
 
 
 }
 ?>
-
-

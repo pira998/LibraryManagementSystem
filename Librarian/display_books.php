@@ -18,7 +18,8 @@ if(isset($_GET['logout'])){
 ?>
 <?php
 include("header.php");
-include ("connection.php");
+include '../utility/connection.php';
+
 
 ?>
 
@@ -34,8 +35,8 @@ include ("connection.php");
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -56,10 +57,12 @@ include ("connection.php");
                         ?>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Author name" id="authorname" name="authorname" onkeyup="myFunction(7,'authorname')">
+                                <input type="text" class="form-control" placeholder="Author name" id="authorname"
+                                    name="authorname" onkeyup="myFunction(7,'authorname')">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Title" id="title" name="title" onkeyup="myFunction2(1,'title')">
+                                <input type="text" class="form-control" placeholder="Title" id="title" name="title"
+                                    onkeyup="myFunction2(1,'title')">
                             </div>
                         </div>
                         <br>
@@ -85,22 +88,22 @@ include ("connection.php");
                             <?php while ($m=mysqli_fetch_array($array)):?>
                             <tr>
 
-                                    <td><?php echo $m["ISBN"]?></td>
-                                    <td><?php echo $m["title"]?></td>
-                                    <td><?php echo $m["subject"]?></td>
-                                    <td><img src="<?php echo $m["bookImg"]?>" height="100" width="100"></td>
-                                    <td><?php echo $m["publisher"]?></td>
-                                    <td><?php echo $m["language"]?></td>
-                                    <td><?php echo $m["price"]?></td>
-                                    <td><?php echo $m["authorname"]?></td>
-                                    <td><?php echo $m["numOfPages"]?></td>
-                                    <td><?php echo $m["purchaseDate"]?></td>
-                                    <td><?php echo $m["publicationDate"]?></td>
-                                    <td><?php echo $m["bookQty"]?></td>
-                                    <td><?php echo $m["availableQty"]?></td>
-                                    <td><?php echo $m["librarianUsername"]?></td>
-                                    <td><a href="delete_book.php?id=<?php echo $m['id']; ?>">Delete</a></td>
-                                    <td><a href="edit_book.php?id=<?php echo $m['id']; ?>">Edit</a></td>
+                                <td><?php echo $m["ISBN"]?></td>
+                                <td><?php echo $m["title"]?></td>
+                                <td><?php echo $m["subject"]?></td>
+                                <td><img src="<?php echo $m["bookImg"]?>" height="100" width="100"></td>
+                                <td><?php echo $m["publisher"]?></td>
+                                <td><?php echo $m["language"]?></td>
+                                <td><?php echo $m["price"]?></td>
+                                <td><?php echo $m["authorname"]?></td>
+                                <td><?php echo $m["numOfPages"]?></td>
+                                <td><?php echo $m["purchaseDate"]?></td>
+                                <td><?php echo $m["publicationDate"]?></td>
+                                <td><?php echo $m["bookQty"]?></td>
+                                <td><?php echo $m["availableQty"]?></td>
+                                <td><?php echo $m["librarianUsername"]?></td>
+                                <td><a href="delete_book.php?id=<?php echo $m['id']; ?>">Delete</a></td>
+                                <td><a href="edit_book.php?id=<?php echo $m['id']; ?>">Edit</a></td>
                             </tr>
                             <?php endwhile;?>
                         </table>
@@ -113,55 +116,51 @@ include ("connection.php");
 <!-- /page content -->
 
 <script>
-    function myFunction(number,myInput) {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById(myInput);
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
+function myFunction(number, myInput) {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById(myInput);
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[number];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[number];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
     }
+}
 </script>
 <script>
-    function myFunction2(number,myInput) {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById(myInput);
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
+function myFunction2(number, myInput) {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById(myInput);
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[number];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[number];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
     }
+}
 </script>
 <?php
 include("footer.php");
 ?>
-
-
-
-

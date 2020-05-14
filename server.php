@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-
+include '../utility/connection.php';
 //intializing variables
 
 $firstname = "";
@@ -13,7 +13,7 @@ $nic = "";
 $errors = array();
 
 
-$db = mysqli_connect('localhost','root','Shanmu@25621','database') or die("could not connect to database");
+
 
 // Register Librarians
 if(isset($_POST['submit'])){
@@ -77,9 +77,9 @@ $_SESSION['success'] == "You are now logged in";header('location: student/index.
         $count = mysqli_num_rows($res);
         if($count==0){
 ?>
-        <div class="alert alert-danger col-lg-6 col-lg-push-3">
-            <strong style="color:white">Invalid</strong> Username Or Password.
-        </div>    
+<div class="alert alert-danger col-lg-6 col-lg-push-3">
+    <strong style="color:white">Invalid</strong> Username Or Password.
+</div>
 <?php
     }
     else
@@ -87,7 +87,7 @@ $_SESSION['success'] == "You are now logged in";header('location: student/index.
         $_SESSION["student"] =$_POST["username"];
 ?>
 <script type="text/javascript">
-    window.location="student/index.php"
+window.location = "student/index.php"
 </script>
 
 
@@ -98,4 +98,3 @@ $_SESSION['success'] == "You are now logged in";header('location: student/index.
         
     }
 ?>
-

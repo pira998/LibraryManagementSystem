@@ -1,5 +1,6 @@
 <?php
-include ("connection.php");
+include '../utility/connection.php';
+
 
 ?>
 
@@ -28,7 +29,7 @@ $id=$firstname=$lastname=$username=$email=$nic=$status='';
         <th>Delete</th>
     </tr>
     <tr>
-    <?php while ($m=mysqli_fetch_array($array)):?>
+        <?php while ($m=mysqli_fetch_array($array)):?>
         <td><?php echo $m['id'] ?></td>
         <td><?php echo $m['regis_num']?></td>
         <td><?php echo $m['firstname'] ?></td>

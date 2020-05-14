@@ -1,6 +1,7 @@
 <?php
-    include("connection.php");
-    include("header.php");
+include("header.php");
+include '../utility/connection.php';
+
 ?>
 
 <!-- page content area main -->
@@ -35,11 +36,11 @@
                     <div class="x_content">
                         <?php
 
-$sql="SELECT * FROM `student_info`";
-$array=mysqli_query($connection,$sql);
+                        $sql = "SELECT * FROM `student_info`";
+                        $array = mysqli_query($connection, $sql);
 
-$id=$firstname=$lastname=$username=$email=$nic=$status='';
-?>
+                        $id = $firstname = $lastname = $username = $email = $nic = $status = '';
+                        ?>
                         <table class="table table-bordered">
                             <tr>
                                 <th>Id</th>
@@ -53,7 +54,7 @@ $id=$firstname=$lastname=$username=$email=$nic=$status='';
                                 <th>Not Approve</th>
                             </tr>
                             <tr>
-                                <?php while ($m=mysqli_fetch_array($array)):?>
+                                <?php while ($m = mysqli_fetch_array($array)) : ?>
                                 <td><?php echo $m['id'] ?></td>
                                 <td><?php echo $m['firstname'] ?></td>
                                 <td><?php echo $m['lastname'] ?></td>
@@ -78,5 +79,5 @@ $id=$firstname=$lastname=$username=$email=$nic=$status='';
 </div>
 <!-- /page content -->
 <?php
-    include("footer.php");
+include("footer.php");
 ?>
